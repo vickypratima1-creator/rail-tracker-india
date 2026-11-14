@@ -1,25 +1,26 @@
 # Rail Tracker India 🚆
 
-Android-first Indian train tracking app starter. Hindi + English interface.
+Android-first Indian train tracking app with Hindi + English interface.
 
-## Current stage
-- Expo / React Native Android application scaffold
-- Hindi + English language toggle
-- Train number/name search interface
-- Live running-status screen structure
-- Demo mode clearly labelled until a permitted live railway data provider is configured
+## Implemented
+- Expo / React Native Android starter.
+- Hindi + English toggle and train number search (4–6 digits).
+- Live running-status integration using RailCore's read-only Indian Railways data API.
+- Displays train status, current station, delay, next stop, destination ETA, data freshness and route stations.
+- API key is stored locally using Expo SecureStore; it is not committed to GitHub.
 
-## Run on Android
-1. Install Expo Go from Google Play.
-2. Open this repository in an Expo-compatible cloud development environment or on a computer.
-3. Run `npm install`, then `npx expo start`.
-4. Scan the QR code using Expo Go.
+## Connect live train data
+1. Create a free RailCore developer account and create an API key with the `live:read` scope: https://railcore.tech/developers
+2. Install Expo Go on your Android phone.
+3. Install dependencies with `npm install`, then start the Expo project with `npx expo start` in an Expo-compatible development environment.
+4. In the app, paste your RailCore API key into the API key field and save it. Then search a 4–6 digit train number.
+5. RailCore currently advertises a free plan of 2,000 requests/month, 300/day and 20/minute. Check its dashboard and terms for current limits.
 
-## Live train data
-Real Indian Railways running status requires a permitted, reliable data provider. This starter does not scrape railway websites or invent live status. Configure a backend endpoint using `EXPO_PUBLIC_RAIL_API_URL` after selecting a provider and checking its terms, pricing and limits.
+## Important
+- RailCore is an independent third-party provider, not Indian Railways / IRCTC. Live results depend on its upstream data.
+- SecureStore protects the key at rest on the device, but any key used by a mobile app may be extracted from a compromised device. For public production release, use a server-side proxy and keep the provider key only on the server.
+- This app does not book tickets or provide PNR status.
+- Confirm important travel information through official NTES: https://enquiry.indianrail.gov.in/ntes/
 
-## APK
-Use Expo EAS Build after configuring an Expo account and Android application identifier. This starter is not an APK yet.
-
-## Security
-Never commit API secrets or passenger personal data to GitHub. Keep provider secrets on a backend, not inside the Android app.
+## Android build
+This repository is not an APK yet. Run `npm run check:android` for an Android export check. A distributable APK/AAB still requires an Expo EAS Build setup and a successful cloud build.
