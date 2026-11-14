@@ -1,1 +1,23 @@
-{"expo":{"name":"Rail Tracker India","slug":"rail-tracker-india","version":"1.0.0","orientation":"portrait","userInterfaceStyle":"light","android":{"package":"in.railtrackerindia.app","versionCode":1}}}
+{
+  "expo": {
+    "name": "Rail Tracker India",
+    "slug": "rail-tracker-india",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "in.railtrackerindia.app",
+      "versionCode": 1
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "1.9.25"
+          }
+        }
+      ]
+    ]
+  }
+}
