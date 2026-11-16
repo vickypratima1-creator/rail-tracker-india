@@ -4,6 +4,7 @@ import {
   ActivityIndicator, Alert, StyleSheet, StatusBar, Keyboard
 } from 'react-native';
 import * as SecureStore from 'expo-secure-store';
+import RailwayServices from './RailwayServices';
 
 const TEXT = {
   hi: {
@@ -204,6 +205,8 @@ export default function App() {
         )}
 
         {!train && !busy && !error && <View style={s.empty}><Text style={s.emptyIcon}>🛤️</Text><Text style={s.emptyText}>{t.noData}</Text></View>}
+
+        <RailwayServices lang={lang} />
 
         <View style={s.settingsCard}>
           <Text style={s.sectionEyebrow}>{t.settings.toUpperCase()}</Text>
